@@ -67,6 +67,9 @@ class Serpent:
         self.key_context = [0] * 140
         
         key_word32 = [0] * 32
+
+        if isinstance(key,str):
+            key = key.encode('utf-8')
         i = 0
         while key:
             key_word32[i] = struct.unpack("<L", key[0:4])[0]
