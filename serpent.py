@@ -106,7 +106,7 @@ class Serpent:
         if len(block) % 16:
             raise ValueError, "block size must be a multiple of 16"
 
-        ciphertext = ''
+        ciphertext = b""
         
         while block:
             a, b, c, d = struct.unpack("<4L", block[0:16])
