@@ -1,1 +1,4 @@
 Serpent encryption in python - credits in script, also included CBC encrypt and decrypt functionality
+
+I have created an example implementation in google colab that has made this serpent cipher compatible with python 3 functionality. 
+In my implementaiton I utilized the decrypt and encrypt functions instead of the serpent_cbc_encrypt and serpent_cbc_decrypt funcitons.  
