@@ -174,7 +174,7 @@ def set_key(l_key, key, key_len):
         while i < 8:
             l_key[i] = 0
             i += 1
-        i = key_len / 32
+        i = int(key_len / 32)
         lk = 1 << (key_len % 32)
         l_key[i] = (l_key[i] & (lk - 1)) | lk
     for i in xrange(132):
