@@ -59,17 +59,19 @@ class Serpent:
         key_len = len(key)
         if key_len % 4:
             # XXX: add padding?
-            raise KeyError, "key not a multiple of 4"
+            raise KeyError, ("key not a multiple of 4")
         if key_len > 32:
             # XXX: prune?
-            raise KeyError, "key_len > 32"
+            raise KeyError, ("key_len > 32")
         
         self.key_context = [0] * 140
         
         key_word32 = [0] * 32
 
+        #ensuring key is bytes
         if isinstance(key,str):
             key = key.encode('utf-8')
+            
         i = 0
         while key:
             key_word32[i] = struct.unpack("<L", key[0:4])[0]
